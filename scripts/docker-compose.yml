@@ -11,7 +11,7 @@ services:
     deploy:
       replicas: 3
     networks:
-      - redis
+      - redis-cluster-net
 
   redis:
     image: thomasjpfan/redis-look:${TAG:-latest}
@@ -22,8 +22,8 @@ services:
     deploy:
       replicas: 3
     networks:
-      - redis
+      - redis-cluster-net
 
 networks:
-  redis:
+  redis-cluster-net:
     external: true
